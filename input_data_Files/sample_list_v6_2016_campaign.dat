@@ -1,0 +1,146 @@
+################################################
+#		EW Signal
+################################################
+# NOT FOUND: /WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+#	aQGC Signal
+################################################
+# NOT FOUND: /WminusTo2LWminusTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WminusTo2JZTo2LJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WminusTo2LZTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2JWminusTo2LJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2JZTo2LJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2LWminusTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2LWplusTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2LZTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+#  Missing ZZ sample
+################################################
+#	VV QCD
+################################################
+# NOT FOUND: /WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+#	Tri-boson process
+################################################
+# NOT FOUND: /WWW_4F_DiLeptonFilter_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WWZJetsTo4L2Nu_4f_TuneCP5_13TeV_amcatnloFXFX_pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ZZZJetsTo4L2Nu_4f_TuneCP5_13TeV_amcatnloFXFX_pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+#	W-jets HT binned
+################################################
+# NOT FOUND: /WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+#	WJets PT binned
+################################################
+# NOT FOUND: /WJetsToLNu_Pt-50To100_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_Pt-250To400_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_Pt-400To600_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_Pt-600ToInf_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+# 	Inclusive wjets
+################################################
+# NOT FOUND: /WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+#	Wjets 0, 1, and 2 jets
+################################################
+# NOT FOUND: /WJetsToLNu_0J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_1J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /WJetsToLNu_2J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+# 	DY 0, 1, 2 jets
+################################################
+# NOT FOUND: /DYJetsToLL_0J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_1J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_2J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+# 	Inclusive Zjets
+################################################
+# NOT FOUND: /DYJetsToLL_M-50_TuneCH3_13TeV-madgraphMLM-herwig7/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-FlatPU28to62HcalNZSRAW_Nano25Oct2019_102X_mcRun2_asymptotic_v7-v1/NANOAODSIM
+################################################
+# 	DY 0, 1, 2, 3 4 jets
+################################################
+# NOT FOUND: /DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DY2JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DY3JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DY4JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+# 	DY HT binned sample
+################################################
+# NOT FOUND: /DYJetsToLL_M-50_HT-70to100_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_M-50_HT-200to400_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# Missing 400-600 sample
+# NOT FOUND: /DYJetsToLL_M-50_HT-600to800_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_M-50_HT-800to1200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_M-50_HT-1200to2500_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /DYJetsToLL_M-50_HT-2500toInf_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+#	TTbar
+################################################
+# NOT FOUND: /TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+# Single top
+################################################
+# NOT FOUND: /ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ST_t-channel_antitop_5f_TuneCP5_13TeV-powheg-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /ST_tW_DS_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# Missing tW top channel
+################################################
+#	QCD
+################################################
+# NOT FOUND: /QCD_HT50to100_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT100to200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT200to300_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT300to500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT500to700_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT700to1000_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT1000to1500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT1500to2000_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+# NOT FOUND: /QCD_HT2000toInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv6-*/NANOAODSIM
+################################################
+# 	EGamma data
+################################################
+# NOT FOUND: /EGamma/Run2016*-Nano25Oct2019*-v*/NANOAOD
+# NOT FOUND: /EGamma/Run2016*-Nano25Oct2019*-v*/NANOAOD
+# NOT FOUND: /EGamma/Run2016*-Nano25Oct2019*-v*/NANOAOD
+# NOT FOUND: /EGamma/Run2016*-Nano25Oct2019*-v*/NANOAOD
+################################################
+#	Single Muon
+################################################
+/SingleMuon/Run2016B_ver1-Nano25Oct2019_ver1-v1/NANOAOD
+/SingleMuon/Run2016B_ver2-Nano25Oct2019_ver2-v1/NANOAOD
+/SingleMuon/Run2016C-Nano25Oct2019-v1/NANOAOD
+/SingleMuon/Run2016D-Nano25Oct2019-v1/NANOAOD
+/SingleMuon/Run2016E-Nano25Oct2019-v1/NANOAOD
+/SingleMuon/Run2016F-Nano25Oct2019-v1/NANOAOD
+/SingleMuon/Run2016G-Nano25Oct2019-v1/NANOAOD
+/SingleMuon/Run2016H-Nano25Oct2019-v1/NANOAOD

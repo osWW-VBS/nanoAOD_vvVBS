@@ -5,6 +5,7 @@ condor_logs/
 *.root
 *.0
 __init__.py
+docker_stderror
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

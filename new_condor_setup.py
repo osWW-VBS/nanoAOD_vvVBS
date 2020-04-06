@@ -11,9 +11,17 @@ Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/Run2018'
 condor_file_name = 'submit_condor_jobs_lnujj'
 
 # Function to create a tar file
+exclude_files = [".tmp", ".log", ".stdout", ".stderr"]
+# warning... don't skip *.root files
+def filter_function(tarinfo):
+  if os.path.splitext(tarinfo.name)[1] in exclude_files:
+    return None
+  else:
+    return tarinfo
+
 def make_tarfile(output_filename, source_dir):
     with tarfile.open(output_filename, "w:gz") as tar:
-            tar.add(source_dir, arcname=os.path.basename(source_dir))
+            tar.add(source_dir, arcname=os.path.basename(source_dir), filter=filter_function)
 
 
 dirName =(str(current_datetime.year)[-2:]
@@ -74,10 +82,10 @@ with open('input_data_Files/samples_list_das.dat') as in_file:
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+ Initial_path + os.sep + sample_name + os.sep + campaign + os.sep + dirName)
      else:
        output_string = sample_name+os.sep+dirName
-       output_path = Initial_path+output_string
+       output_path = Initial_path+ os.sep + output_string
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path + os.sep + sample_name)
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path + os.sep + sample_name+os.sep+dirName)
-     print "output_path = ",output_path
+     print "==> output_path = ",output_path
 
      ########################################
      #print 'dasgoclient --query="file dataset='+lines.strip()+'"'
@@ -110,6 +118,12 @@ outScript.write("\n"+'cd ' + CMSSWRel + '/src/PhysicsTools/NanoAODTools/python/p
 outScript.write("\n"+'rm *.root');
 outScript.write("\n"+'scramv1 b ProjectRename');
 outScript.write("\n"+'eval `scram runtime -sh`');
+outScript.write("\n"+'echo "========================================="');
+outScript.write("\n"+'echo "cat post_proc.py"');
+outScript.write("\n"+'echo "..."');
+outScript.write("\n"+'cat post_proc.py');
+outScript.write("\n"+'echo "..."');
+outScript.write("\n"+'echo "========================================="');
 outScript.write("\n"+'sed -i "s/testfile = .*/testfile = \\"${1}\\"/g" '+post_proc_to_run);
 #sed 's/testfile = .*/testfile = "root:\/\/cms-xrd-global.cern.ch\/\/store\/data\/Run2018A\/EGamma\/NANOAOD\/Nano1June2019-v1\/40000\/7F8E5EFA-DF69-3442-8741-B04F7313B3B1.root"/g' post_proc.py
 #outScript.write("\n"+'sed  -i "s/\/store\/mc\/RunIIFall17NanoAODv5\/ZZTo4L_13TeV_powheg_pythia8\/NANOAODSIM\/PU2017_12Apr2018_Nano1June2019_new_pmx_102X_mc2017_realistic_v7-v1\/110000\/00BB722F-1A9E-C64B-B2D0-A5818F1661C3.root/${1}/g" post_proc_zprime.py');
