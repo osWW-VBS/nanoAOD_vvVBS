@@ -21,7 +21,7 @@
 /WplusTo2LWminusTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v2/NANOAODSIM
 /WplusTo2LWplusTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
 /WplusTo2LZTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
-#  Missing ZZ sample
+/ZTo2LZTo2JJJ_EWK_LO_aQGC_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
 ################################################
 #	VV QCD
 ################################################
@@ -122,32 +122,56 @@
 ################################################
 /ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
 /ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
-# NOT FOUND: /ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /ST_t-channel_antitop_5f_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
+/ST_t-channel_antitop_5f_TuneCP5_PSweights_13TeV-powheg-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
 /ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
-/ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_new_pmx_102X_mc2017_realistic_v7-v1/NANOAODSIM
-# NOT FOUND: /ST_tW_DS_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# Missing tW top channel
+/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+/ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
 ################################################
 #	QCD
 ################################################
 /QCD_HT50to100_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
-# NOT FOUND: /QCD_HT100to200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /QCD_HT200to300_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /QCD_HT300to500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /QCD_HT500to700_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /QCD_HT700to1000_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /QCD_HT1000to1500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /QCD_HT1500to2000_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-# NOT FOUND: /QCD_HT2000toInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv6-*/NANOAODSIM
-################################################
-# 	EGamma data
-################################################
-# NOT FOUND: /EGamma/Run2017*-Nano25Oct2019*-v*/NANOAOD
-################################################
-#	Single Muon
-################################################
+/QCD_HT100to200_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+/QCD_HT300to500_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+/QCD_HT500to700_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+/QCD_HT700to1000_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+/QCD_HT1000to1500_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+/QCD_HT1500to2000_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+/QCD_HT2000toInf_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv6-PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7-v1/NANOAODSIM
+#################################################
+## 	DoubleEGamma data
+#################################################
+/DoubleEG/Run2017B-Nano25Oct2019-v1/NANOAOD
+/DoubleEG/Run2017C-Nano25Oct2019-v1/NANOAOD
+/DoubleEG/Run2017D-Nano25Oct2019-v1/NANOAOD
+/DoubleEG/Run2017E-Nano25Oct2019-v1/NANOAOD
+/DoubleEG/Run2017F-Nano25Oct2019-v1/NANOAOD
+#################################################
+## 	Double Muon data
+#################################################
+/DoubleMuon/Run2017B-Nano25Oct2019-v1/NANOAOD
+/DoubleMuon/Run2017C-Nano25Oct2019-v1/NANOAOD
+/DoubleMuon/Run2017D-Nano25Oct2019-v1/NANOAOD
+/DoubleMuon/Run2017E-Nano25Oct2019-v1/NANOAOD
+/DoubleMuon/Run2017F-Nano25Oct2019-v1/NANOAOD
+#################################################
+## 	Muon EGamma data
+#################################################
+/MuonEG/Run2017B-Nano25Oct2019-v1/NANOAOD
+/MuonEG/Run2017C-Nano25Oct2019-v1/NANOAOD
+/MuonEG/Run2017D-Nano25Oct2019-v1/NANOAOD
+/MuonEG/Run2017E-Nano25Oct2019-v1/NANOAOD
+/MuonEG/Run2017F-Nano25Oct2019-v1/NANOAOD
+#################################################
+##	Single Electron data
+#################################################
+/SingleElectron/Run2017B-Nano25Oct2019-v1/NANOAOD
+/SingleElectron/Run2017C-Nano25Oct2019-v1/NANOAOD
+/SingleElectron/Run2017D-Nano25Oct2019-v1/NANOAOD
+/SingleElectron/Run2017E-Nano25Oct2019-v1/NANOAOD
+/SingleElectron/Run2017F-Nano25Oct2019-v1/NANOAOD
+#################################################
+## 	Single Muon data
+#################################################
 /SingleMuon/Run2017B-Nano25Oct2019-v1/NANOAOD
 /SingleMuon/Run2017C-Nano25Oct2019-v1/NANOAOD
 /SingleMuon/Run2017D-Nano25Oct2019-v1/NANOAOD

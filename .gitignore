@@ -1,4 +1,5 @@
 # Ignore root files
+CMSSW_10*.*
 condor_logs/
 *.jdl
 *.sh

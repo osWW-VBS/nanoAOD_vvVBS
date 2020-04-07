@@ -5,25 +5,55 @@ from datetime import datetime
 
 current_datetime = datetime.now()
 
-#Initial_path = '/eos/uscms/store/user/rasharma/nanoAOD_skim/2018/Test'
-Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/Run2018'
+StringToChange = "Run2017_v6_DataJsonFix"
 
-condor_file_name = 'submit_condor_jobs_lnujj'
+#InputFileFromWhereReadDASNames = 'sample_list_v6_2016_campaign.dat'
+InputFileFromWhereReadDASNames = 'sample_list_v6_2017_campaign.dat'
+#Initial_path = '/eos/uscms/store/user/rasharma/nanoAOD_skim/2018/Test'
+#Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/Run2017_v6_FixJEC'
+Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/'+StringToChange
+
+os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path )
+
+condor_file_name = 'submit_condor_jobs_lnujj_v6_'+StringToChange
 
 # Function to create a tar file
 exclude_files = [".tmp", ".log", ".stdout", ".stderr"]
 # warning... don't skip *.root files
+
+
 def filter_function(tarinfo):
+  """Helper function for the tarball creating.
+  
+  This function filters the unwanted files to add into the tarball creating.
+  
+  Arguments:
+    tarinfo {type of tarinfo var} -- this is test
+  
+  Returns:
+    returntype -- boolean function.
+  """
   if os.path.splitext(tarinfo.name)[1] in exclude_files:
     return None
   else:
     return tarinfo
 
 def make_tarfile(output_filename, source_dir):
-    with tarfile.open(output_filename, "w:gz") as tar:
-            tar.add(source_dir, arcname=os.path.basename(source_dir), filter=filter_function)
+  """Function to create the tarball.
+  
+  This function creates the tarball of a given directory.
+  
+  Arguments:
+    output_filename {string} -- Output file name of the tarball.
+    source_dir {string} -- Name of directory for which you need to make the tarball.
+  """
+  with tarfile.open(output_filename, "w:gz") as tar:
+    tar.add(source_dir, arcname=os.path.basename(source_dir), filter=filter_function)
 
+"""This gives a string of numbers
 
+This uses the date and time info to give us the string of the form YYMMDD_HHMMSS.
+"""
 dirName =(str(current_datetime.year)[-2:]
          +str(format(current_datetime.month,'02d'))
          +str(format(current_datetime.day,'02d'))
@@ -33,7 +63,8 @@ dirName =(str(current_datetime.year)[-2:]
          +str(format(current_datetime.second,'02d'))
          )
 print dirName
-output_log_path = 'condor_logs'+os.sep+dirName
+
+output_log_path = 'condor_logs/'+StringToChange+os.sep+dirName
 os.system('mkdir -p '+output_log_path)
     
 post_proc_to_run = "post_proc.py"
@@ -49,7 +80,8 @@ make_tarfile(CMSSWRel+".tgz", cmsswDirPath)
 print("copying the ",CMSSWRel+".tgz  file to eos...\n")
 os.system('xrdcp -f ' + CMSSWRel+".tgz" + ' root://cmseos.fnal.gov/'+Initial_path+'/' + CMSSWRel+".tgz")
 
-with open('input_data_Files/samples_list_das.dat') as in_file:
+#with open('input_data_Files/sample_list_v6_2017_campaign.dat') as in_file:
+with open('input_data_Files/'+InputFileFromWhereReadDASNames) as in_file:
   count = 0
   outjdl_file = open(condor_file_name+".jdl","w")
   outjdl_file.write("Executable = "+condor_file_name+".sh\n")
@@ -74,7 +106,7 @@ with open('input_data_Files/samples_list_das.dat') as in_file:
      #      Create output directory
      #
      ########################################
-     if sample_name.find("SingleMuon") != -1 or sample_name.find("EGamma") != -1:
+     if sample_name.find("SingleMuon") != -1 or sample_name.find("SingleElectron") != -1 or sample_name.find("EGamma") != -1 or sample_name.find("DoubleMuon") != -1 or sample_name.find("MuonEG") != -1 or sample_name.find("DoubleEG") != -1:
        output_string = sample_name + os.sep + campaign + os.sep + dirName
        output_path = Initial_path + os.sep + output_string
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path + os.sep + sample_name)
@@ -125,8 +157,6 @@ outScript.write("\n"+'cat post_proc.py');
 outScript.write("\n"+'echo "..."');
 outScript.write("\n"+'echo "========================================="');
 outScript.write("\n"+'sed -i "s/testfile = .*/testfile = \\"${1}\\"/g" '+post_proc_to_run);
-#sed 's/testfile = .*/testfile = "root:\/\/cms-xrd-global.cern.ch\/\/store\/data\/Run2018A\/EGamma\/NANOAOD\/Nano1June2019-v1\/40000\/7F8E5EFA-DF69-3442-8741-B04F7313B3B1.root"/g' post_proc.py
-#outScript.write("\n"+'sed  -i "s/\/store\/mc\/RunIIFall17NanoAODv5\/ZZTo4L_13TeV_powheg_pythia8\/NANOAODSIM\/PU2017_12Apr2018_Nano1June2019_new_pmx_102X_mc2017_realistic_v7-v1\/110000\/00BB722F-1A9E-C64B-B2D0-A5818F1661C3.root/${1}/g" post_proc_zprime.py');
 outScript.write("\n"+command);
 outScript.write("\n"+'echo "====> List root files : " ');
 outScript.write("\n"+'ls *.root');

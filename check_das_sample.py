@@ -1,18 +1,21 @@
 import os,sys
 
 year_campaign_dict = {
+"v5_2016_campaign" : ["RunIISummer16NanoAODv5-*_Nano1June2019_102X_mcRun2_asymptotic_v7-v*", "Run2016*-Nano25Oct2019*-v*"],
 "v6_2016_campaign" : ["RunIISummer16NanoAODv6-*","Run2016*-Nano25Oct2019*-v*"],
 "v6_2017_campaign" : ["RunIIFall17NanoAODv6-*","Run2017*-Nano25Oct2019*-v*"],
 "v6_2018_campaign" : ["RunIIAutumn18NanoAODv6-*102X_upgrade2018_realistic_v20-v*","Run2018*-Nano25Oct2019*-v*"],
 }
 
-campaign_to_run = "v6_2016_campaign"
-#campaign_to_run = "v6_2017_campaign"
+#campaign_to_run = "v6_2016_campaign"
+campaign_to_run = "v6_2017_campaign"
 #campaign_to_run = "v6_2018_campaign"
+#campaign_to_run = 'v5_2016_campaign'
 
-with open('input_data_Files/samples_list_das.dat') as in_file:
+with open('samples.dat') as in_file:
   count = 0
-  outjdl_file = open("input_data_Files/sample_list_"+campaign_to_run+".dat","w")
+  outjdl_file = open("sample_list_"+campaign_to_run+".dat","w")
+  #outjdl_file = open("input_data_Files/sample_list_"+campaign_to_run+".dat","w")
   for lines in in_file:
      if lines[0] == "#":
        outjdl_file.write(lines)
