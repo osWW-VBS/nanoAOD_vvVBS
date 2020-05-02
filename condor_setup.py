@@ -1,102 +1,69 @@
 import subprocess
-import tarfile
 import os
-from datetime import datetime
+import sys
+from color_style import style
 
-current_datetime = datetime.now()
+sys.path.append("utils/.")
 
-StringToChange = "Run2017_v6_DataJsonFix"
+# Variables to be changed by user
+StringToChange = "temp"
+InputFileFromWhereReadDASNames = 'sample_list_v6_2018_campaign.dat'
 
-#InputFileFromWhereReadDASNames = 'sample_list_v6_2016_campaign.dat'
-InputFileFromWhereReadDASNames = 'sample_list_v6_2017_campaign.dat'
-#Initial_path = '/eos/uscms/store/user/rasharma/nanoAOD_skim/2018/Test'
-#Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/Run2017_v6_FixJEC'
-Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/'+StringToChange
-
-os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path )
-
+Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/'
+Initial_path += StringToChange
 condor_file_name = 'submit_condor_jobs_lnujj_v6_'+StringToChange
 
-# Function to create a tar file
-exclude_files = [".tmp", ".log", ".stdout", ".stderr"]
-# warning... don't skip *.root files
+# Create log files
+import infoCreaterGit
+SumamryOfCurrentSubmission = raw_input("\n\nWrite summary for current job submission: ")
+infoLogFiles = infoCreaterGit.BasicInfoCreater('summary.dat',SumamryOfCurrentSubmission)
+infoLogFiles.GenerateGitPatchAndLog()
 
-
-def filter_function(tarinfo):
-  """Helper function for the tarball creating.
-  
-  This function filters the unwanted files to add into the tarball creating.
-  
-  Arguments:
-    tarinfo {type of tarinfo var} -- this is test
-  
-  Returns:
-    returntype -- boolean function.
-  """
-  if os.path.splitext(tarinfo.name)[1] in exclude_files:
-    return None
-  else:
-    return tarinfo
-
-def make_tarfile(output_filename, source_dir):
-  """Function to create the tarball.
-  
-  This function creates the tarball of a given directory.
-  
-  Arguments:
-    output_filename {string} -- Output file name of the tarball.
-    source_dir {string} -- Name of directory for which you need to make the tarball.
-  """
-  with tarfile.open(output_filename, "w:gz") as tar:
-    tar.add(source_dir, arcname=os.path.basename(source_dir), filter=filter_function)
-
-"""This gives a string of numbers
-
-This uses the date and time info to give us the string of the form YYMMDD_HHMMSS.
-"""
-dirName =(str(current_datetime.year)[-2:]
-         +str(format(current_datetime.month,'02d'))
-         +str(format(current_datetime.day,'02d'))
-         +"_"
-         +str(format(current_datetime.hour,'02d'))
-         +str(format(current_datetime.minute,'02d'))
-         +str(format(current_datetime.second,'02d'))
-         )
-print dirName
-
-output_log_path = 'condor_logs/'+StringToChange+os.sep+dirName
-os.system('mkdir -p '+output_log_path)
-    
-post_proc_to_run = "post_proc.py"
-command = "python "+post_proc_to_run
 # Get CMSSW directory path and name
 cmsswDirPath = os.environ['CMSSW_BASE']
 CMSSWRel = cmsswDirPath.split("/")[-1]
 
+# Create directories for storing log files and output files at EOS.
+import fileshelper 
+dirsToCreate = fileshelper.FileHelper('condor_logs/'+StringToChange, Initial_path)
+output_log_path = dirsToCreate.CreateLogDirWithDate()
+storeDir = dirsToCreate.CreateSotreArea(Initial_path)
+dirName = dirsToCreate.dirName
+
 # create tarball of present working CMSSW base directory
 os.system('rm -f CMSSW*.tgz')
-make_tarfile(CMSSWRel+".tgz", cmsswDirPath)
+import makeTarFile
+makeTarFile.make_tarfile(cmsswDirPath, CMSSWRel+".tgz")
+print "copying the "+CMSSWRel+".tgz  file to eos path: "+storeDir+"\n"
+os.system('xrdcp -f ' + CMSSWRel+".tgz" + ' root://cmseos.fnal.gov/'+storeDir+'/' + CMSSWRel+".tgz")
 
-print("copying the ",CMSSWRel+".tgz  file to eos...\n")
-os.system('xrdcp -f ' + CMSSWRel+".tgz" + ' root://cmseos.fnal.gov/'+Initial_path+'/' + CMSSWRel+".tgz")
+    
+post_proc_to_run = "post_proc.py"
+command = "python "+post_proc_to_run
+
+Transfer_Input_Files = ("Cert_271036-284044_13TeV_PromptReco_Collisions16_JSON.txt, " +
+                        "Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt, " +
+                        "Cert_314472-325175_13TeV_PromptReco_Collisions18_JSON.txt, " +
+                        "keep_and_drop_data.txt")
 
 #with open('input_data_Files/sample_list_v6_2017_campaign.dat') as in_file:
 with open('input_data_Files/'+InputFileFromWhereReadDASNames) as in_file:
-  count = 0
   outjdl_file = open(condor_file_name+".jdl","w")
   outjdl_file.write("Executable = "+condor_file_name+".sh\n")
   outjdl_file.write("Universe = vanilla\n")
   outjdl_file.write("Notification = ERROR\n")
   outjdl_file.write("Should_Transfer_Files = YES\n")
   outjdl_file.write("WhenToTransferOutput = ON_EXIT\n")
-  outjdl_file.write("Transfer_Input_Files = Cert_314472-325175_13TeV_PromptReco_Collisions18_JSON.txt, "+post_proc_to_run+"\n")
+  outjdl_file.write("Transfer_Input_Files = "+Transfer_Input_Files + ",  " + post_proc_to_run+"\n")
   outjdl_file.write("x509userproxy = $ENV(X509_USER_PROXY)\n")
+  count = 0
+  count_jobs = 0
   for lines in in_file:
      if lines[0] == "#": continue
      count = count +1
      #if count > 1: break
-     print "="*51,"\n"
-     print "==>  Sample : ",count
+     print(style.RED +"="*51+style.RESET+"\n")
+     print "==> Sample : ",count
      sample_name = lines.split('/')[1]
      campaign = lines.split('/')[2].split('-')[0]
      print "==> sample_name = ",sample_name
@@ -112,11 +79,13 @@ with open('input_data_Files/'+InputFileFromWhereReadDASNames) as in_file:
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path + os.sep + sample_name)
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path + os.sep + sample_name + os.sep + campaign)
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+ Initial_path + os.sep + sample_name + os.sep + campaign + os.sep + dirName)
+       infoLogFiles.SendGitLogAndPatchToEos(Initial_path + os.sep + sample_name + os.sep + campaign + os.sep + dirName)
      else:
        output_string = sample_name+os.sep+dirName
        output_path = Initial_path+ os.sep + output_string
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path + os.sep + sample_name)
        os.system("xrdfs root://cmseos.fnal.gov/ mkdir "+Initial_path + os.sep + sample_name+os.sep+dirName)
+       infoLogFiles.SendGitLogAndPatchToEos(Initial_path + os.sep + sample_name + os.sep + dirName)
      print "==> output_path = ",output_path
 
      ########################################
@@ -124,13 +93,18 @@ with open('input_data_Files/'+InputFileFromWhereReadDASNames) as in_file:
      #print "..."
      output = os.popen('dasgoclient --query="file dataset='+lines.strip()+'"').read()
 
+     count_root_files = 0
      for root_file in output.split():
        #print "=> ",root_file
+       count_root_files+=1
+       count_jobs += 1
        outjdl_file.write("Output = "+output_log_path+"/"+sample_name+"_$(Process).stdout\n")
        outjdl_file.write("Error  = "+output_log_path+"/"+sample_name+"_$(Process).stdout\n")
        outjdl_file.write("Log  = "+output_log_path+"/"+sample_name+"_$(Process).log\n")
        outjdl_file.write("Arguments = "+("root://cms-xrd-global.cern.ch/"+root_file).replace('/','\/')+" "+output_path+"  "+Initial_path+"\n")
        outjdl_file.write("Queue \n")
+     print "Number of files: ",count_root_files
+     print "Number of jobs (till now): ",count_jobs
   outjdl_file.close();
 
 

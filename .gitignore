@@ -1,4 +1,6 @@
 # Ignore root files
+*.patch
+summary.dat
 CMSSW_10*.*
 condor_logs/
 *.jdl
