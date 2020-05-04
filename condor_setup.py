@@ -1,15 +1,16 @@
 import subprocess
 import os
 import sys
-from color_style import style
 
 sys.path.append("utils/.")
 
+from color_style import style
+
 # Variables to be changed by user
-StringToChange = "temp"
+StringToChange = "Run2018_v6_3May"
 InputFileFromWhereReadDASNames = 'sample_list_v6_2018_campaign.dat'
 
-Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/'
+Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/'
 Initial_path += StringToChange
 condor_file_name = 'submit_condor_jobs_lnujj_v6_'+StringToChange
 
@@ -135,6 +136,7 @@ outScript.write("\n"+command);
 outScript.write("\n"+'echo "====> List root files : " ');
 outScript.write("\n"+'ls *.root');
 outScript.write("\n"+'echo "====> copying *.root file to stores area..." ');
+outScript.write("\n"+'echo "xrdcp -f *.root root://cmseos.fnal.gov/${2}"');
 outScript.write("\n"+'xrdcp -f *.root root://cmseos.fnal.gov/${2}');
 outScript.write("\n"+'rm *.root');
 outScript.write("\n"+'cd ${_CONDOR_SCRATCH_DIR}');
