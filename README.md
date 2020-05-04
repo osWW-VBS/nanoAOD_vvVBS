@@ -48,9 +48,9 @@ nanoAOD skiming code for vv semi-leptonic VBS studies
    Step: 5 (b): Condor-job submission
 
    ```bash
-   python new_condor_setup.py
+   python condor_setup.py
    voms-proxy-init -voms cms --valid 200:00
-   condor_submit new_condor.jdl
+   condor_submit <Files-created-from-above-command>.jdl
    ```
 
 # To-Do List
