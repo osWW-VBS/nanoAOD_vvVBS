@@ -14,13 +14,28 @@ import os
 4. Add the above 7 lines into new jdl file.
 5. To add the failed jobs information in the new jdl file, do following:
   1. From the log files check the name of root files that failed.
-  2. Search the same root file from the main jdl file and grep the corresponding 
+  2. Search the same root file from the main jdl file and grep the corresponding
     necessary lines from the main jdl file and add it to the new jdl file.
 """
-string_to_search = "preselected entries from root:"
+
+"""path of log file directory"""
 path = "condor_logs/Run2018_v6_3May/200503_031434/"
+
+"""Name of main condor jdl/sh file name"""
 condor_file_name = "submit_condor_jobs_lnujj_v6_Run2018_v6_3May"
-Resubmission_txt = "1"
+
+"""This variable `Resubmit_no` is going to append in the new jdl file. 
+New jdl file name is the main jdl file + _resubmit_ + Resubmit_no
+
+New JDL FILE name : condor_file_name + "_resubmit_" + Resubmit_no
+"""
+Resubmit_no = "1"
+
+"""This string is going to be searched in the log files.
+
+If this string is not present in the log file this means the jobs are failed.
+"""
+string_to_search = "preselected entries from root:"
 
 grepCommand = 'grep -L  "'+string_to_search+'" '+ path + os.sep +'*.stdout'
 grepCommand = grepCommand.replace('//','/')
@@ -28,7 +43,7 @@ print 'grep command: ',grepCommand
 output = os.popen(grepCommand).read()
 print('output:')
 
-outjdl_file = open(condor_file_name+'_resubmit_'+Resubmission_txt+".jdl","w")
+outjdl_file = open(condor_file_name+'_resubmit_'+Resubmit_no+".jdl","w")
 with open(condor_file_name+".jdl") as myfile:
     head = [next(myfile) for x in xrange(7)]
 
@@ -43,7 +58,7 @@ for lines in output.split():
   grepCommand_GetJdlInfo = 'grep -A1 -B3 "'+root_file+'" '+condor_file_name+'.jdl'
   # print grepCommand_GetJdlInfo
   grep_condor_jdl_part = os.popen(grepCommand_GetJdlInfo).read()
-  updateString = grep_condor_jdl_part.replace('Process)','Process)'+ '_resubmit_' +Resubmission_txt)
+  updateString = grep_condor_jdl_part.replace('Process)','Process)'+ '_resubmit_' +Resubmit_no)
   # print updateString
   outjdl_file.write(updateString)
 outjdl_file.close()
