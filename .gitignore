@@ -1,4 +1,5 @@
 # Ignore root files
+*.bkup
 *.patch
 summary.dat
 CMSSW_10*.*

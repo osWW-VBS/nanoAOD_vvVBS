@@ -2,7 +2,7 @@ import subprocess
 import os
 import sys
 
-sys.path.append("utils/.")
+sys.path.append("Utils/python_utils/.")
 
 from color_style import style
 
@@ -25,7 +25,7 @@ cmsswDirPath = os.environ['CMSSW_BASE']
 CMSSWRel = cmsswDirPath.split("/")[-1]
 
 # Create directories for storing log files and output files at EOS.
-import fileshelper 
+import fileshelper
 dirsToCreate = fileshelper.FileHelper('condor_logs/'+StringToChange, Initial_path)
 output_log_path = dirsToCreate.CreateLogDirWithDate()
 storeDir = dirsToCreate.CreateSotreArea(Initial_path)
@@ -38,7 +38,7 @@ makeTarFile.make_tarfile(cmsswDirPath, CMSSWRel+".tgz")
 print "copying the "+CMSSWRel+".tgz  file to eos path: "+storeDir+"\n"
 os.system('xrdcp -f ' + CMSSWRel+".tgz" + ' root://cmseos.fnal.gov/'+storeDir+'/' + CMSSWRel+".tgz")
 
-    
+
 post_proc_to_run = "post_proc.py"
 command = "python "+post_proc_to_run
 
