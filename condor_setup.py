@@ -7,8 +7,8 @@ sys.path.append("Utils/python_utils/.")
 from color_style import style
 
 # Variables to be changed by user
-StringToChange = "Run2018_v6_3May"
-InputFileFromWhereReadDASNames = 'sample_list_v6_2018_campaign.dat'
+StringToChange = "Run2017_v6_19MayTTBarHadronic"
+InputFileFromWhereReadDASNames = 'sample_list_v6_2017_campaign.dat'
 
 Initial_path = '/eos/uscms/store/user/lnujj/VVjj_aQGC/nanoAOD_skim/'
 Initial_path += StringToChange
