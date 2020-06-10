@@ -15,7 +15,7 @@ class wvAnalysisProducer(Module):
         self.out = wrappedOutputTree
         #self.out.branch("EventMass",  "F");
         """process event, return True (go to next module) or False (fail, go to next event)"""
-	#pass
+        #pass
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
         pass
     def analyze(self, event):
@@ -31,7 +31,7 @@ class wvAnalysisProducer(Module):
         
         Returns:
             boolean -- if the event passes skimming then it returns true and
-                       go to the next events else returns false and go to 
+                       go to the next module else returns false and go to 
                        the next event.
         """
         electrons = Collection(event, "Electron")

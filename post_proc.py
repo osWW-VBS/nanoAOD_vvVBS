@@ -4,7 +4,7 @@ import os,sys
 from PhysicsTools.NanoAODTools.postprocessing.framework.postprocessor import PostProcessor
 from wvAnalysisModule import *
 
-testfile = "root://cms-xrd-global.cern.ch//store/data/Run2018C/DoubleMuon/NANOAOD/Nano25Oct2019-v1/240000/BB1EC3A4-AB2E-BC49-A2A5-97242D4808C4.root"
+testfile = "root://cms-xrd-global.cern.ch//store/mc/RunIIFall17NanoAODv6/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/PU2017_12Apr2018_Nano25Oct2019_102X_mc2017_realistic_v7_ext1-v1/280000/8EA35258-86C9-0844-8288-BFC45F57BB31.root"
 
 if testfile.find("SingleMuon") != -1 or testfile.find("EGamma") != -1 or testfile.find("SingleElectron") != -1 or testfile.find("DoubleMuon") != -1 or testfile.find("MuonEG") != -1 or testfile.find("DoubleEG") != -1:
   print "==> Processing a data file..."
@@ -27,7 +27,8 @@ else:
   if testfile.find("RunIISummer16NanoAODv6") != -1: year = 2016
   jetmetCorrector = createJMECorrector(isMC=True, dataYear=year, jesUncert="All", redojec=True, jetType = "AK4PFchs")
   fatJetCorrector = createJMECorrector(isMC=True, dataYear=year, jesUncert="All", redojec=True, jetType = "AK8PFPuppi")
-  p=PostProcessor(".",[testfile],"","keep_and_drop.txt",[jetmetCorrector(),fatJetCorrector(),wvAnalysisModule()],provenance=True,)
+  p=PostProcessor(".",[testfile],"","keep_and_drop.txt",[wvAnalysisModule(),jetmetCorrector(),fatJetCorrector()],provenance=True,)
+  #p=PostProcessor(".",[testfile],"","keep_and_drop.txt",[jetmetCorrector(),fatJetCorrector(),wvAnalysisModule()],provenance=True,)
   #p=PostProcessor(".",[testfile],"","keep_and_drop.txt",[jetmetCorrector(),fatJetCorrector(),wvAnalysisModule()],provenance=True,maxEntries=21000,)
 
 p.run()
