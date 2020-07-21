@@ -5,13 +5,13 @@ year_campaign_dict = {
 "v6_2016_campaign" : ["RunIISummer16NanoAODv6-*","Run2016*-Nano25Oct2019*-v*"],
 "v6_2017_campaign" : ["RunIIFall17NanoAODv6-*","Run2017*-Nano25Oct2019*-v*"],
 "v6_2018_campaign" : ["RunIIAutumn18NanoAODv6-*102X_upgrade2018_realistic_v20-v*","Run2018*-Nano25Oct2019*-v*"],
-"v7_2018_campaign" : ["RunIIAutumn18NanoAODv7-*102X_upgrade2018_realistic_v20-v*","Run201*-02Apr2020-v1"],
-"v7_2017_campaign" : ["RunIIFall17NanoAODv7-*","Run201*-02Apr2020-v1"],
-"v7_2016_campaign" : ["RunIISummer16NanoAODv7-*","Run201*-02Apr2020-v1"],
+"v7_2018_campaign" : ["RunIIAutumn18NanoAODv7-*102X_upgrade2018_realistic_v20-v*","Run2018*-02Apr2020-v1"],
+"v7_2017_campaign" : ["RunIIFall17NanoAODv7-*","Run2017*-02Apr2020-v1"],
+"v7_2016_campaign" : ["RunIISummer16NanoAODv7-*","Run2016*-02Apr2020-v1"],
 }
 
 #campaign_to_run = "v6_2016_campaign"
-campaign_to_run = "v7_2016_campaign"
+campaign_to_run = "v7_2018_campaign"
 #campaign_to_run = "v6_2018_campaign"
 #campaign_to_run = 'v5_2016_campaign'
 
@@ -43,7 +43,7 @@ with open('samples.dat') as in_file:
      print "==> sample_name = ",sample_name
      print "==> campaign = ",campaign
      print "==> campaign = ",tier
-     if sample_name.find("SingleMuon") != -1 or sample_name.find("EGamma") != -1:
+     if sample_name.find("SingleMuon") != -1 or sample_name.find("EGamma") != -1 or sample_name.find("SingleElectron") !=-1 or sample_name.find("DoubleEG") != -1 or sample_name.find("DoubleMuon") != -1 or sample_name.find("MuonEG") != -1:
        v6_ntuples = "/"+sample_name+"/"+year_campaign_dict[campaign_to_run][1]+"/"+tier
      else:
        v6_ntuples = "/"+sample_name+"/"+year_campaign_dict[campaign_to_run][0]+"/"+tier
