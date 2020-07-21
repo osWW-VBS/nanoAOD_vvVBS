@@ -47,10 +47,15 @@ nanoAOD skiming code for vv semi-leptonic VBS studies
       ```
 
    2. Step: 5 (b): Condor-job submission
-      ```bash
-      python condor_setup.py
-      voms-proxy-init -voms cms --valid 200:00
-      condor_submit <Files-created-from-above-command>.jdl
-      ```
+      1. In file `condor_setup.py`, specify correct input text file from which you need to take input NanoAOD DAS names. Also, updated the output EOS path. Then do following:
+
+         ```bash
+         cd $CMSSW_BASE/src/PhysicsTools/NanoAODTools/python/postprocessing/analysis/nanoAOD_vvVBS
+         # Edit condor_setup.py, then
+         python condor_setup.py
+         # Set proxy before submitting the condor jobs.
+         voms-proxy-init -voms cms --valid 200:00
+         condor_submit <Files-created-from-above-command>.jdl
+         ```
 
 
